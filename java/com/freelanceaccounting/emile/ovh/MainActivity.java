@@ -2,54 +2,24 @@ package com.freelanceaccounting.emile.ovh;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.freelanceaccounting.emile.ovh.View.newBusiness;
+import com.freelanceaccounting.emile.ovh.View.newDatabase;
 
-    Button btn_new_user;
-    Button btn_forgot_password;
-    Button btn_authentication;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
 
-        btn_new_user = (Button)findViewById(R.id.button2);
-
-        btn_forgot_password = (Button)findViewById(R.id.button1);
-
-        btn_authentication = (Button)findViewById(R.id.button3);
-
-        btn_new_user.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view){
-                switchActivitiesNewUser();
-            }
-
-        });
-
-        btn_forgot_password.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view){
-                switchActivitiesForgotPassword();
-            }
-
-        });
-
-    }
-
-    private void switchActivitiesNewUser(){
-        Intent switchActivityIntent = new Intent(this, NewUserActivity.class);
+        Intent switchActivityIntent = new Intent(this, newDatabase.class);
         startActivity(switchActivityIntent);
-    }
 
-    private void switchActivitiesForgotPassword(){
-        Intent switchActivityIntent = new Intent(this, ForgotPasswordActivity.class);
-        startActivity(switchActivityIntent);
+        //Intent switchActivityIntent = new Intent(this, newBusiness.class);
+        //startActivity(switchActivityIntent);
+
     }
 
 }
