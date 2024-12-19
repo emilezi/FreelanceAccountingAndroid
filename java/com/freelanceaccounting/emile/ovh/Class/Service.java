@@ -32,6 +32,7 @@ public class Service extends SQLiteOpenHelper{
         onCreate(db);
     }
 
+
     void newService(String SIREN, String name, String category, String costhour, String description){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();

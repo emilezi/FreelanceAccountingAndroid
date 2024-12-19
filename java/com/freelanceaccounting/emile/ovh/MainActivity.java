@@ -1,12 +1,15 @@
 package com.freelanceaccounting.emile.ovh;
 
+import com.freelanceaccounting.emile.ovh.Class.User;
+
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.freelanceaccounting.emile.ovh.View.newBusiness;
 import com.freelanceaccounting.emile.ovh.View.newDatabase;
+import com.freelanceaccounting.emile.ovh.View.homeMenu;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,12 +17,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent switchActivityIntent = new Intent(this, newDatabase.class);
-        startActivity(switchActivityIntent);
+        Boolean ifData = displayData();
 
-        //Intent switchActivityIntent = new Intent(this, newBusiness.class);
-        //startActivity(switchActivityIntent);
+        if(!ifData){
+            switchActivitiesnewDatabase();
+        }else{
+            switchActivitieshomeMenu();
+        }
 
-    }
+        }
+
+        private void switchActivitiesnewDatabase(){
+            Intent switchActivityIntent = new Intent(this, newDatabase.class);
+            startActivity(switchActivityIntent);
+        }
+
+        private void switchActivitieshomeMenu(){
+            Intent switchActivityIntent = new Intent(this, homeMenu.class);
+            startActivity(switchActivityIntent);
+        }
+
+        protected Boolean displayData(){
+            User Database = new User(MainActivity.this);
+            Cursor cursor = Database.readData();
+            if(cursor.getCount() == 0){
+                return false;
+            }else{
+                return true;
+            }
+        }
 
 }

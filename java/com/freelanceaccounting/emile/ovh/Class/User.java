@@ -2,6 +2,7 @@ package com.freelanceaccounting.emile.ovh.Class;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class User extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void firstUser(String SIREN, String SIRET, String first_name, String last_name, String identifier, String email, String phone, String password){
+    public void firstUser(String SIREN, String SIRET, String first_name, String last_name, String identifier, String email, String phone, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -46,8 +47,8 @@ public class User extends SQLiteOpenHelper {
         cv.put("email", email);
         cv.put("phone", phone);
         cv.put("password", password);
-        /*cv.put("user_key", user_key);*/
-        /*cv.put("recovery_key", recovery_key);*/
+        cv.put("user_key", "test");
+        cv.put("recovery_key", "test");
         cv.put("date", currentUtilDate.getTime());
         long result = db.insert("user", null, cv);
         if(result == -1){
@@ -58,7 +59,7 @@ public class User extends SQLiteOpenHelper {
 
     }
 
-    void newUser(String SIREN, String SIRET, String first_name, String last_name, String identifier, String email, String phone, String password){
+    public void newUser(String SIREN, String SIRET, String first_name, String last_name, String identifier, String email, String phone, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -82,6 +83,17 @@ public class User extends SQLiteOpenHelper {
             Toast.makeText(context, "Profil créé avec succès", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public Cursor readData(){
+        String sqlUser = "SELECT * FROM User";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(sqlUser, null);
+        }
+        return cursor;
     }
 
 }
