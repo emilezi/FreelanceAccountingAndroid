@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_bank"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.bank.BankFragment"
+        android:label="@string/menu_bank"
+        tools:layout="@layout/fragment_bank" />
+
+    <fragment
+        android:id="@+id/nav_business"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.business.BusinessFragment"
+        android:label="@string/menu_business"
+        tools:layout="@layout/fragment_business" />
+    <fragment
+        android:id="@+id/nav_charge"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.bank.BankFragment"
+        android:label="@string/menu_charge"
+        tools:layout="@layout/fragment_charge" />
+
+    <fragment
+        android:id="@+id/nav_client"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.business.BusinessFragment"
+        android:label="@string/menu_client"
+        tools:layout="@layout/fragment_client" />
+    <fragment
+        android:id="@+id/nav_currency"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.bank.BankFragment"
+        android:label="@string/menu_currency"
+        tools:layout="@layout/fragment_currency" />
+
+    <fragment
+        android:id="@+id/nav_service"
+        android:name="com.freelanceaccounting.emile.ovh.View.ui.business.BusinessFragment"
+        android:label="@string/menu_service"
+        tools:layout="@layout/fragment_service" />
+</navigation>

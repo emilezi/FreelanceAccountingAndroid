@@ -6,6 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+/**
+     * Setting management class.
+     *
+     * @author Emile Z.
+     */
+
 public class Setting extends SQLiteOpenHelper{
 
     private Context context;

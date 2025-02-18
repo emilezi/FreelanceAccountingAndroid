@@ -9,6 +9,12 @@ import android.widget.Toast;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+/**
+     * Business management class.
+     *
+     * @author Emile Z.
+     */
+
 public class Business extends SQLiteOpenHelper{
 
     private Context context;
@@ -23,7 +29,7 @@ public class Business extends SQLiteOpenHelper{
     }
 
     public void onCreate(SQLiteDatabase db){
-        String sqlBusiness="CREATE TABLE business(_id INTEGER PRIMARY KEY AUTOINCREMENT, SIREN VARCHAR, company_name VARCHAR, trade_name VARCHAR, SIRET VARCHAR,  vat_number VARCHAR, langue VARCHAR, country VARCHAR, address VARCHAR, address_supplement VARCHAR, postal_code VARCHAR, city VARCHAR, state VARCHAR, description TEXT, date TIMESTAMP)";
+        String sqlBusiness="CREATE TABLE business(_id INTEGER PRIMARY KEY AUTOINCREMENT, SIREN VARCHAR, company_name VARCHAR, trade_name VARCHAR, SIRET VARCHAR,  vat_number VARCHAR, country VARCHAR, address VARCHAR, address_supplement VARCHAR, postal_code VARCHAR, city VARCHAR, state VARCHAR, description TEXT, date TIMESTAMP)";
         db.execSQL(sqlBusiness);
     }
 
@@ -41,7 +47,6 @@ public class Business extends SQLiteOpenHelper{
         cv.put("trade_name", trade_name);
         cv.put("SIRET", SIRET);
         cv.put("vat_number", vat_number);
-        cv.put("langue", langue);
         cv.put("country", country);
         cv.put("address", address);
         cv.put("address_supplement", address_supplement);

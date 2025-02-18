@@ -9,6 +9,12 @@ import android.widget.Toast;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+/**
+     * Client management class.
+     *
+     * @author Emile Z.
+     */
+
 public class Client extends SQLiteOpenHelper{
 
     private Context context;

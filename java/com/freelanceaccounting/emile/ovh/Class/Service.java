@@ -9,6 +9,12 @@ import android.widget.Toast;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+/**
+     * Service management class.
+     *
+     * @author Emile Z.
+     */
+
 public class Service extends SQLiteOpenHelper{
 
     private Context context;

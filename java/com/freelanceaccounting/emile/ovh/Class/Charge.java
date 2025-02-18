@@ -9,6 +9,12 @@ import android.widget.Toast;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+/**
+     * Charge management class.
+     *
+     * @author Emile Z.
+     */
+
 public class Charge extends SQLiteOpenHelper{
 
     private Context context;

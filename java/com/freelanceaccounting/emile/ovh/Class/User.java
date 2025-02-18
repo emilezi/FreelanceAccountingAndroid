@@ -10,6 +10,12 @@ import android.widget.Toast;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+/**
+     * User management class.
+     *
+     * @author Emile Z.
+     */
+
 public class User extends SQLiteOpenHelper {
 
     private Context context;
@@ -24,7 +30,7 @@ public class User extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db){
-        String sqlUser="CREATE TABLE user(_id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR, type VARCHAR, SIREN VARCHAR UNIQUE, SIRET VARCHAR,  first_name VARCHAR, last_name VARCHAR, identifier VARCHAR, email VARCHAR, phone VARCHAR, password VARCHAR, user_key VARCHAR, recovery_key VARCHAR, date TIMESTAMP)";
+        String sqlUser="CREATE TABLE user(_id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR, type VARCHAR, SIREN VARCHAR UNIQUE, SIRET VARCHAR, date_creation VARCHAR, taxation VARCHAR,  first_name VARCHAR, last_name VARCHAR, identifier VARCHAR, email VARCHAR, phone VARCHAR, password VARCHAR, user_key VARCHAR, recovery_key VARCHAR, date TIMESTAMP)";
         db.execSQL(sqlUser);
     }
 
@@ -33,7 +39,7 @@ public class User extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void firstUser(String SIREN, String SIRET, String first_name, String last_name, String identifier, String email, String phone, String password){
+    public void firstUser(String SIREN, String SIRET, String date_creation, String taxation, String first_name, String last_name, String identifier, String email, String phone, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -41,6 +47,8 @@ public class User extends SQLiteOpenHelper {
         cv.put("type", "admin");
         cv.put("SIREN", SIREN);
         cv.put("SIRET", SIRET);
+        cv.put("date_creation", date_creation);
+        cv.put("taxation", taxation);
         cv.put("first_name", first_name);
         cv.put("last_name", last_name);
         cv.put("identifier", identifier);
@@ -59,7 +67,7 @@ public class User extends SQLiteOpenHelper {
 
     }
 
-    public void newUser(String SIREN, String SIRET, String first_name, String last_name, String identifier, String email, String phone, String password){
+    public void newUser(String SIREN, String SIRET, String date_creation, String taxation, String first_name, String last_name, String identifier, String email, String phone, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -67,14 +75,16 @@ public class User extends SQLiteOpenHelper {
         cv.put("type", "user");
         cv.put("SIREN", SIREN);
         cv.put("SIRET", SIRET);
+        cv.put("date_creation", date_creation);
+        cv.put("taxation", taxation);
         cv.put("first_name", first_name);
         cv.put("last_name", last_name);
         cv.put("identifier", identifier);
         cv.put("email", email);
         cv.put("phone", phone);
         cv.put("password", password);
-        /*cv.put("user_key", user_key);*/
-        /*cv.put("recovery_key", recovery_key);*/
+        cv.put("user_key", "test");
+        cv.put("recovery_key", "test");
         cv.put("date", currentUtilDate.getTime());
         long result = db.insert("user", null, cv);
         if(result == -1){

@@ -8,8 +8,14 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.freelanceaccounting.emile.ovh.View.newDatabase;
 import com.freelanceaccounting.emile.ovh.View.homeMenu;
+import com.freelanceaccounting.emile.ovh.View.newDatabase;
+
+/**
+     * Activity management class.
+     *
+     * @author Emile Z.
+     */
 
 public class MainActivity extends AppCompatActivity {
 

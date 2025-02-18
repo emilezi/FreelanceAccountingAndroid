@@ -6,6 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+/**
+     * Bank management class.
+     *
+     * @author Emile Z.
+     */
+
 public class Bank extends SQLiteOpenHelper{
 
     private Context context;
@@ -16,7 +22,7 @@ public class Bank extends SQLiteOpenHelper{
     }
 
     public void onCreate(SQLiteDatabase db){
-        String sqlBank="CREATE TABLE bank(_id INTEGER PRIMARY KEY AUTOINCREMENT, SIREN VARCHAR UNIQUE, bic1_excluding_tax VARCHAR,  bic2_excluding_tax VARCHAR, bnc_excluding_tax VARCHAR, treasury VARCHAR)";
+        String sqlBank="CREATE TABLE bank(_id INTEGER PRIMARY KEY AUTOINCREMENT, SIREN VARCHAR UNIQUE, turnover_excluding_tax VARCHAR, bic1_excluding_tax VARCHAR,  bic2_excluding_tax VARCHAR, bnc_excluding_tax VARCHAR, treasury VARCHAR)";
         db.execSQL(sqlBank);
     }
 
@@ -30,6 +36,7 @@ public class Bank extends SQLiteOpenHelper{
         ContentValues cv = new ContentValues();
 
         cv.put("SIREN", SIREN);
+        cv.put("turnover_excluding_tax", "0");
         cv.put("bic1_excluding_tax", "0");
         cv.put("bic2_excluding_tax", "0");
         cv.put("bnc_excluding_tax", "0");

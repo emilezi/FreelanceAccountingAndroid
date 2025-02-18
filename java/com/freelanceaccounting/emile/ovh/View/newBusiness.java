@@ -11,10 +11,16 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+     * newBusiness view class.
+     *
+     * @author Emile Z.
+     */
+
 public class newBusiness extends AppCompatActivity {
 
     Button btn_new_business;
-    EditText first_name_input, last_name_input, identifier_input, email_input, phone_input, SIREN_input, SIRET_input, password_input, repassword_input;
+    EditText first_name_input, last_name_input, identifier_input, email_input, phone_input, SIREN_input, SIRET_input, date_input, taxation_input, password_input, repassword_input;
 
 
     @Override
@@ -31,6 +37,8 @@ public class newBusiness extends AppCompatActivity {
         phone_input = findViewById(R.id.phone);
         SIREN_input = findViewById(R.id.SIREN);
         SIRET_input = findViewById(R.id.SIRET);
+        date_input = findViewById(R.id.creation_date);
+        taxation_input = findViewById(R.id.taxation);
         password_input = findViewById(R.id.password);
         repassword_input = findViewById(R.id.repassword);
 
@@ -46,6 +54,8 @@ public class newBusiness extends AppCompatActivity {
                         phone_input.getText().toString().trim(),
                         SIREN_input.getText().toString().trim(),
                         SIRET_input.getText().toString().trim(),
+                        date_input.getText().toString().trim(),
+                        taxation_input.getText().toString().trim(),
                         password_input.getText().toString().trim());
 
                 switchActivitieshomeMenu();

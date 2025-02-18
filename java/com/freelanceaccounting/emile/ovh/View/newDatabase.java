@@ -9,6 +9,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+     * newDatabase view class.
+     *
+     * @author Emile Z.
+     */
+
 public class newDatabase extends AppCompatActivity {
 
     Button btn_new_database;
