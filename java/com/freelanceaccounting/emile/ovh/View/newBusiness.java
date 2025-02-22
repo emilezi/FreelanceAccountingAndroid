@@ -67,7 +67,7 @@ public class newBusiness extends AppCompatActivity {
     }
 
     private void switchActivitieshomeMenu(){
-        Intent switchActivityIntent = new Intent(this, homeMenu.class);
+        Intent switchActivityIntent = new Intent(this, homeApplication.class);
         startActivity(switchActivityIntent);
     }
 

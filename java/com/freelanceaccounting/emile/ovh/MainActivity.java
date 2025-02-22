@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.freelanceaccounting.emile.ovh.View.homeMenu;
+import com.freelanceaccounting.emile.ovh.View.homeApplication;
 import com.freelanceaccounting.emile.ovh.View.newDatabase;
 
 /**
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private void switchActivitieshomeMenu(){
-            Intent switchActivityIntent = new Intent(this, homeMenu.class);
+            Intent switchActivityIntent = new Intent(this, homeApplication.class);
             startActivity(switchActivityIntent);
         }
 

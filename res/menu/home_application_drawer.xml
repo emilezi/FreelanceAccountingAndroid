@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_bank"
+            android:title="@string/menu_bank" />
+        <item
+            android:id="@+id/nav_business"
+            android:title="@string/menu_business" />
+        <item
+            android:id="@+id/nav_charge"
+            android:title="@string/menu_charge" />
+        <item
+            android:id="@+id/nav_client"
+            android:title="@string/menu_client" />
+        <item
+            android:id="@+id/nav_currency"
+            android:title="@string/menu_currency" />
+        <item
+            android:id="@+id/nav_service"
+            android:title="@string/menu_service" />
+    </group>
+</menu>

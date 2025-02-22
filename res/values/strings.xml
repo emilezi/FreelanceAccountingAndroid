@@ -8,11 +8,14 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">FreelanceAccounting</string>
     <string name="menu_bank">Banque</string>
     <string name="menu_business">Entreprises</string>
     <string name="menu_charge">Charges</string>
     <string name="menu_client">Clients</string>
     <string name="menu_currency">Devises</string>
     <string name="menu_service">Services</string>
+    <string name="title_activity_home_application">homeApplication</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>
