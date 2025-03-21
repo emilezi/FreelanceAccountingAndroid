@@ -12,6 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.freelanceaccounting.emile.ovh.databinding.FragmentBankBinding;
 
+/**
+     * BankFragment view class.
+     *
+     * @author Emile Z.
+     */
+
 public class BankFragment extends Fragment {
 
     private FragmentBankBinding binding;

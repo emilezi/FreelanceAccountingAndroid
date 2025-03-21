@@ -12,6 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.freelanceaccounting.emile.ovh.databinding.FragmentCurrencyBinding;
 
+/**
+     * CurrencyFragment view class.
+     *
+     * @author Emile Z.
+     */
+
 public class CurrencyFragment extends Fragment {
 
     private FragmentCurrencyBinding binding;

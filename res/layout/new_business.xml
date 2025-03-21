@@ -248,28 +248,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textRepassword"
-                android:layout_width="350dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                android:text="Entrez à nouveau le mot de passe"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/repassword"
-                android:layout_width="350dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="5dp"
-                android:inputType="textPassword"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <Button
                 android:id="@+id/btn_new_business"
                 android:layout_width="210dp"

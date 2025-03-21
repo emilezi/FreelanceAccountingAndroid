@@ -12,6 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.freelanceaccounting.emile.ovh.databinding.FragmentClientBinding;
 
+/**
+     * ClientFragment view class.
+     *
+     * @author Emile Z.
+     */
+
 public class ClientFragment extends Fragment {
 
     private FragmentClientBinding binding;

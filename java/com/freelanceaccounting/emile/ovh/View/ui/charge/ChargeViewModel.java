@@ -10,7 +10,7 @@ public class ChargeViewModel extends ViewModel {
 
     public ChargeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is FreelanceAccounting fragment");
+        mText.setValue("This is charge fragment");
     }
 
     public LiveData<String> getText() {

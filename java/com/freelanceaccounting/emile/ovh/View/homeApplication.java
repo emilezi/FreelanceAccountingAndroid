@@ -1,8 +1,13 @@
 package com.freelanceaccounting.emile.ovh.View;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.PopupMenu;
 
 import com.freelanceaccounting.emile.ovh.R;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,10 +22,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.freelanceaccounting.emile.ovh.databinding.HomeApplicationBinding;
 
+/**
+     * homeApplication class.
+     *
+     * @author Emile Z.
+     */
+
 public class homeApplication extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private HomeApplicationBinding binding;
+
+    Button action_settings;
+    Button action_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +44,7 @@ public class homeApplication extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarHomeApplication.toolbar);
-        binding.appBarHomeApplication.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .setAnchorView(R.id.fab).show();
-            }
-        });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -63,5 +70,15 @@ public class homeApplication extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home_application);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void switchActivitiessettingsApplication(){
+        Intent switchActivityIntent = new Intent(this, settingApplication.class);
+        startActivity(switchActivityIntent);
+    }
+
+    private void switchActivitiesuserApplication(){
+        Intent switchActivityIntent = new Intent(this, userApplication.class);
+        startActivity(switchActivityIntent);
     }
 }

@@ -12,6 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.freelanceaccounting.emile.ovh.databinding.FragmentChargeBinding;
 
+/**
+     * ChargeFragment view class.
+     *
+     * @author Emile Z.
+     */
+
 public class ChargeFragment extends Fragment {
 
     private FragmentChargeBinding binding;

@@ -10,7 +10,7 @@ public class ServiceViewModel extends ViewModel {
 
     public ServiceViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is FreelanceAccounting fragment");
+        mText.setValue("This is service fragment");
     }
 
     public LiveData<String> getText() {

@@ -12,6 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.freelanceaccounting.emile.ovh.databinding.FragmentServiceBinding;
 
+/**
+     * ServiceFragment view class.
+     *
+     * @author Emile Z.
+     */
+
 public class ServiceFragment extends Fragment {
 
     private FragmentServiceBinding binding;
