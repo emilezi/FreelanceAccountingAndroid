@@ -17,53 +17,42 @@
         android:theme="@style/Theme.FreelanceAccounting"
         tools:targetApi="31">
         <activity
-            android:name=".View.homeApplication"
-            android:exported="false"
-            android:label="@string/title_activity_home_application"
-            android:theme="@style/Theme.FreelanceAccounting.NoActionBar" />
+            android:name=".View.Bank"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeBusiness"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeCharge"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeClient"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeCurrency"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeService"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeSettings"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
+        <activity
+            android:name=".View.homeUser"
+            android:exported="true"
+            android:parentActivityName=".View.homeMenu"/>
         <activity
             android:name=".View.homeMenu"
-            android:exported="true"
-            android:label="@string/title_activity_home_menu"
-            android:theme="@style/Theme.FreelanceAccounting.NoActionBar" />
+            android:exported="true" />
         <activity
             android:name=".View.newDatabase"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.bank.BankFragment"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.bank.BankViewModel"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.business.BusinessFragment"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.business.BusinessViewModel"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.charge.ChargeFragment"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.charge.ChargeViewModel"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.client.ClientFragment"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.client.ClientViewModel"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.currency.CurrencyFragment"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.currency.CurrencyViewModel"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.service.ServiceFragment"
-            android:exported="true" />
-        <activity
-            android:name=".View.ui.service.ServiceViewModel"
             android:exported="true" />
         <activity
             android:name=".View.newBusiness"
