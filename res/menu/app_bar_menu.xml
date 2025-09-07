@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuHome"
+        android:title="Accueil"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menuBank"
+        android:title="Banque"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuBusiness"
+        android:title="Entreprises"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuCharge"
+        android:title="Charges"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuClient"
+        android:title="Clients"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuCurrency"
+        android:title="Devises"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuService"
+        android:title="Services"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuSettings"
+        android:title="Paramètres"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuUser"
+        android:title="Compte"
+        app:showAsAction="never"/>
+</menu>
