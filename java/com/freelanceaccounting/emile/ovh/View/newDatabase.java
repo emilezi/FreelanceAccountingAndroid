@@ -24,7 +24,7 @@ public class newDatabase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_database);
 
-        btn_new_database = (Button)findViewById(R.id.btn_new_database);
+        btn_new_database = findViewById(R.id.btn_new_database);
 
         btn_new_database.setOnClickListener(new View.OnClickListener() {
 

@@ -30,7 +30,7 @@ public class User extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db){
-        String sqlUser="CREATE TABLE user(_id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR, type VARCHAR, SIREN VARCHAR UNIQUE, SIRET VARCHAR, date_creation VARCHAR, taxation VARCHAR,  first_name VARCHAR, last_name VARCHAR, identifier VARCHAR, email VARCHAR, phone VARCHAR, password VARCHAR, user_key VARCHAR, recovery_key VARCHAR, date TIMESTAMP)";
+        String sqlUser="CREATE TABLE user(_id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR, type VARCHAR, SIREN VARCHAR UNIQUE, SIRET VARCHAR, date_creation VARCHAR, taxation VARCHAR,  first_name VARCHAR, last_name VARCHAR, identifier VARCHAR, email VARCHAR, phone VARCHAR, user_key VARCHAR, date TIMESTAMP)";
         db.execSQL(sqlUser);
     }
 
@@ -39,9 +39,9 @@ public class User extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void firstUser(String SIREN, String SIRET, String date_creation, String taxation, String first_name, String last_name, String identifier, String email, String phone, String password){
+    public void firstUser(String SIREN, String SIRET, String date_creation, String taxation, String first_name, String last_name, String identifier, String email, String phone){
 
-        if(SIREN.isEmpty() || SIRET.isEmpty() || date_creation.isEmpty() || taxation.isEmpty() || first_name.isEmpty() || last_name.isEmpty() || identifier.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()){
+        if(SIREN.isEmpty() || SIRET.isEmpty() || date_creation.isEmpty() || taxation.isEmpty() || first_name.isEmpty() || last_name.isEmpty() || identifier.isEmpty() || email.isEmpty() || phone.isEmpty()){
             Toast.makeText(context, "Les champs n'ont pas été remplis correctement", Toast.LENGTH_SHORT).show();
         }else{
             SQLiteDatabase db = this.getWritableDatabase();
@@ -57,9 +57,7 @@ public class User extends SQLiteOpenHelper {
             cv.put("identifier", identifier);
             cv.put("email", email);
             cv.put("phone", phone);
-            cv.put("password", password);
             cv.put("user_key", "test");
-            cv.put("recovery_key", "test");
             cv.put("date", currentUtilDate.getTime());
             long result = db.insert("user", null, cv);
             if(result == -1){
@@ -72,7 +70,7 @@ public class User extends SQLiteOpenHelper {
 
     }
 
-    public void newUser(String SIREN, String SIRET, String date_creation, String taxation, String first_name, String last_name, String identifier, String email, String phone, String password){
+    public void newUser(String SIREN, String SIRET, String date_creation, String taxation, String first_name, String last_name, String identifier, String email, String phone){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -87,9 +85,7 @@ public class User extends SQLiteOpenHelper {
         cv.put("identifier", identifier);
         cv.put("email", email);
         cv.put("phone", phone);
-        cv.put("password", password);
         cv.put("user_key", "test");
-        cv.put("recovery_key", "test");
         cv.put("date", currentUtilDate.getTime());
         long result = db.insert("user", null, cv);
         if(result == -1){

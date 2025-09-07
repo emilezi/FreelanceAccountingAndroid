@@ -1,33 +1,22 @@
 package com.freelanceaccounting.emile.ovh.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import com.freelanceaccounting.emile.ovh.R;
 import com.google.android.material.appbar.MaterialToolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-/**
-     * homeMenu class.
-     *
-     * @author Emile Z.
-     */
-
-public class homeMenu extends AppCompatActivity {
+public class homeBusiness extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_menu);
+        setContentView(R.layout.home_business);
 
         MaterialToolbar toolbar = findViewById(R.id.toolBar);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -36,7 +25,9 @@ public class homeMenu extends AppCompatActivity {
 
                 int ItemID = item.getItemId();
 
-                if(ItemID == R.id.menuBank){
+                if(ItemID == R.id.menuHome){
+                    switchActivitiesHome();
+                }else if(ItemID == R.id.menuBank){
                     switchActivitiesBank();
                 }else if(ItemID == R.id.menuBusiness){
                     switchActivitieshomeBusiness();
@@ -54,9 +45,15 @@ public class homeMenu extends AppCompatActivity {
                     switchActivitieshomeUser();
                 }
 
-            return false;
+                return false;
             }
         });
+
+    }
+
+    public void switchActivitiesHome(){
+        Intent switchActivityIntent = new Intent(this, homeMenu.class);
+        startActivity(switchActivityIntent);
     }
 
     public void switchActivitiesBank(){
