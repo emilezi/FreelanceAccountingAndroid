@@ -31,7 +31,7 @@ public class Bank extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    void newBank(String SIREN){
+    public void newBank(String SIREN){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -41,7 +41,7 @@ public class Bank extends SQLiteOpenHelper{
         cv.put("bic2_excluding_tax", "0");
         cv.put("bnc_excluding_tax", "0");
         cv.put("treasury", "0");
-        db.insert("setting", null, cv);
+        db.insert("bank", null, cv);
 
     }
 

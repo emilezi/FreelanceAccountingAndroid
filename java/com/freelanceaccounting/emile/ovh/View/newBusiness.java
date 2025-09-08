@@ -1,5 +1,6 @@
 package com.freelanceaccounting.emile.ovh.View;
 
+import com.freelanceaccounting.emile.ovh.Class.Bank;
 import com.freelanceaccounting.emile.ovh.Class.User;
 import com.freelanceaccounting.emile.ovh.R;
 
@@ -56,9 +57,13 @@ public class newBusiness extends AppCompatActivity {
                 date = date_input.getText().toString().trim();
                 taxation = taxation_input.getText().toString().trim();
 
-                User Database = new User(newBusiness.this);
+                User DB_User = new User(newBusiness.this);
 
-                Database.firstUser(SIREN, SIRET, date, taxation, first_name, last_name, identifier, email, phone);
+                Bank DB_Bank  = new Bank(newBusiness.this);
+
+                DB_User.firstUser(SIREN, SIRET, date, taxation, first_name, last_name, identifier, email, phone);
+
+                DB_Bank.newBank(SIREN);
 
                 if(SIREN.isEmpty() || SIRET.isEmpty() || date.isEmpty() || taxation.isEmpty() || first_name.isEmpty() || last_name.isEmpty() || identifier.isEmpty() || email.isEmpty() || phone.isEmpty()){
 

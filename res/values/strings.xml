@@ -1,20 +1,12 @@
 <resources>
     <string name="app_name">FreelanceAccounting</string>
-    <string name="title_activity_home_menu">homeMenu</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="title_activity_home_application">homeApplication</string>
-    <string name="action_settings">Paramètres</string>
-    <string name="action_user">Compte</string>
-
-    <string name="menu_home">FreelanceAccounting</string>
+    <string name="home_menu">FreelanceAccounting</string>
     <string name="menu_bank">Banque</string>
     <string name="menu_business">Entreprises</string>
     <string name="menu_charge">Charges</string>
     <string name="menu_client">Clients</string>
     <string name="menu_currency">Devises</string>
     <string name="menu_service">Services</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_user">Compte</string>
 </resources>
