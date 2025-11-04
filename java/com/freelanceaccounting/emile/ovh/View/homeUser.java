@@ -1,10 +1,13 @@
 package com.freelanceaccounting.emile.ovh.View;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.TextView;
 
+import com.freelanceaccounting.emile.ovh.Class.Bank;
+import com.freelanceaccounting.emile.ovh.Class.User;
 import com.freelanceaccounting.emile.ovh.R;
 import com.google.android.material.appbar.MaterialToolbar;
 
@@ -12,6 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class homeUser extends AppCompatActivity{
+
+    User DB_User;
+
+    String first_name, last_name, identifier, email, phone, SIREN, SIRET, date, taxation;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +58,108 @@ public class homeUser extends AppCompatActivity{
             }
         });
 
+        DB_User = new User(homeUser.this);
+
+        TextView firstname_value = (TextView) findViewById(R.id.firstnameValue);
+        firstname_value.setText(getFirstName());
+        TextView lastname_value = (TextView) findViewById(R.id.lastnameValue);
+        lastname_value.setText(getLastName());
+        TextView treasury_value = (TextView) findViewById(R.id.sirenValue);
+        treasury_value.setText(getSIREN());
+        TextView siret_value = (TextView) findViewById(R.id.siretValue);
+        siret_value.setText(getSIRET());
+        TextView date_value = (TextView) findViewById(R.id.dateValue);
+        date_value.setText(getDate());
+        TextView taxation_value = (TextView) findViewById(R.id.taxationValue);
+        taxation_value.setText(getTaxation());
+        TextView identifier_value = (TextView) findViewById(R.id.identifierValue);
+        identifier_value.setText(getIdentifier());
+        TextView email_value = (TextView) findViewById(R.id.emailValue);
+        email_value.setText(getEmail());
+        TextView phone_value = (TextView) findViewById(R.id.phoneValue);
+        phone_value.setText(getPhone());
+
+    }
+
+    protected String getSIREN(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            SIREN = cursor.getString(3);
+        }
+        return SIREN;
+
+    }
+
+    protected String getSIRET(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            SIRET = cursor.getString(4);
+        }
+        return SIRET;
+
+    }
+
+    protected String getDate(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            date = cursor.getString(5);
+        }
+        return date;
+
+    }
+
+    protected String getTaxation(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            taxation = cursor.getString(6);
+        }
+        return taxation;
+
+    }
+
+    protected String getFirstName(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            first_name = cursor.getString(7);
+        }
+        return first_name;
+
+    }
+
+    protected String getLastName(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            last_name = cursor.getString(8);
+        }
+        return last_name;
+
+    }
+
+    protected String getIdentifier(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            identifier = cursor.getString(9);
+        }
+        return identifier;
+
+    }
+
+    protected String getEmail(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            email = cursor.getString(10);
+        }
+        return email;
+
+    }
+
+    protected String getPhone(){
+        Cursor cursor = DB_User.readData();
+        while (cursor.moveToNext()){
+            phone = cursor.getString(12);
+        }
+        return phone;
+
     }
 
     public void switchActivitiesHome(){
@@ -57,7 +168,7 @@ public class homeUser extends AppCompatActivity{
     }
 
     public void switchActivitiesBank(){
-        Intent switchActivityIntent = new Intent(this, Bank.class);
+        Intent switchActivityIntent = new Intent(this, homeBank.class);
         startActivity(switchActivityIntent);
     }
 

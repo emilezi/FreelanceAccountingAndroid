@@ -30,7 +30,7 @@ public class User extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db){
-        String sqlUser="CREATE TABLE user(_id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR, type VARCHAR, SIREN VARCHAR UNIQUE, SIRET VARCHAR, date_creation VARCHAR, taxation VARCHAR,  first_name VARCHAR, last_name VARCHAR, identifier VARCHAR, email VARCHAR, phone VARCHAR, user_key VARCHAR, date TIMESTAMP)";
+        String sqlUser="CREATE TABLE user(_id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR, type VARCHAR, SIREN VARCHAR UNIQUE, SIRET VARCHAR, date_creation VARCHAR, taxation VARCHAR,  first_name VARCHAR, last_name VARCHAR, identifier VARCHAR, email VARCHAR, email_verification VARCHAR, phone VARCHAR, user_key VARCHAR, recovery_key VARCHAR, date TIMESTAMP)";
         db.execSQL(sqlUser);
     }
 
@@ -56,8 +56,10 @@ public class User extends SQLiteOpenHelper {
             cv.put("last_name", last_name);
             cv.put("identifier", identifier);
             cv.put("email", email);
+            cv.put("email_verification", "null");
             cv.put("phone", phone);
             cv.put("user_key", "test");
+            cv.put("recovery_key", "test");
             cv.put("date", currentUtilDate.getTime());
             long result = db.insert("user", null, cv);
             if(result == -1){
@@ -84,8 +86,10 @@ public class User extends SQLiteOpenHelper {
         cv.put("last_name", last_name);
         cv.put("identifier", identifier);
         cv.put("email", email);
+        cv.put("email_verification", "null");
         cv.put("phone", phone);
         cv.put("user_key", "test");
+        cv.put("recovery_key", "test");
         cv.put("date", currentUtilDate.getTime());
         long result = db.insert("user", null, cv);
         if(result == -1){

@@ -1,27 +1,30 @@
 package com.freelanceaccounting.emile.ovh.View;
 
+import com.freelanceaccounting.emile.ovh.Class.Bank;
+import com.freelanceaccounting.emile.ovh.R;
+
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.google.android.material.appbar.MaterialToolbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.content.Intent;
+public class homeBank extends AppCompatActivity{
 
-import com.freelanceaccounting.emile.ovh.R;
-import com.google.android.material.appbar.MaterialToolbar;
+    Bank DB_Bank;
 
-/**
-     * homeMenu class.
-     *
-     * @author Emile Z.
-     */
-
-public class homeMenu extends AppCompatActivity {
+    String treasury;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_menu);
+        setContentView(R.layout.home_bank);
 
         MaterialToolbar toolbar = findViewById(R.id.toolBar);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -30,7 +33,9 @@ public class homeMenu extends AppCompatActivity {
 
                 int ItemID = item.getItemId();
 
-                if(ItemID == R.id.menuBank){
+                if(ItemID == R.id.menuHome){
+                    switchActivitiesHome();
+                }else if(ItemID == R.id.menuBank){
                     switchActivitiesBank();
                 }else if(ItemID == R.id.menuBusiness){
                     switchActivitieshomeBusiness();
@@ -48,9 +53,28 @@ public class homeMenu extends AppCompatActivity {
                     switchActivitieshomeUser();
                 }
 
-            return false;
+                return false;
             }
         });
+
+        DB_Bank = new Bank(homeBank.this);
+
+        TextView treasury_value = (TextView) findViewById(R.id.treasuryValue);
+        treasury_value.setText(getTreasury());
+
+    }
+
+    protected String getTreasury(){
+        Cursor cursor = DB_Bank.readData();
+        while (cursor.moveToNext()){
+            treasury = cursor.getString(6);
+        }
+        return treasury;
+    }
+
+    public void switchActivitiesHome(){
+        Intent switchActivityIntent = new Intent(this, homeMenu.class);
+        startActivity(switchActivityIntent);
     }
 
     public void switchActivitiesBank(){
@@ -92,5 +116,4 @@ public class homeMenu extends AppCompatActivity {
         Intent switchActivityIntent = new Intent(this, homeUser.class);
         startActivity(switchActivityIntent);
     }
-
 }

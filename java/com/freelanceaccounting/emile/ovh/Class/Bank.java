@@ -2,6 +2,7 @@ package com.freelanceaccounting.emile.ovh.Class;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -43,6 +44,17 @@ public class Bank extends SQLiteOpenHelper{
         cv.put("treasury", "0");
         db.insert("bank", null, cv);
 
+    }
+
+    public Cursor readData(){
+        String sqlUser = "SELECT * FROM Bank";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(sqlUser, null);
+        }
+        return cursor;
     }
 
 }

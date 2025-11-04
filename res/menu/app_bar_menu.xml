@@ -6,6 +6,12 @@
         android:id="@+id/menuHome"
         android:title="Accueil"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuUser"
+        android:title="Compte"
+        app:showAsAction="never"/>
+
     <item
         android:id="@+id/menuBank"
         android:title="Banque"
@@ -39,10 +45,5 @@
     <item
         android:id="@+id/menuSettings"
         android:title="Paramètres"
-        app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/menuUser"
-        android:title="Compte"
         app:showAsAction="never"/>
 </menu>

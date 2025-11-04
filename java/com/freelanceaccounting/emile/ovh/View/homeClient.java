@@ -3,7 +3,6 @@ package com.freelanceaccounting.emile.ovh.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import com.freelanceaccounting.emile.ovh.R;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -57,7 +56,7 @@ public class homeClient extends AppCompatActivity{
     }
 
     public void switchActivitiesBank(){
-        Intent switchActivityIntent = new Intent(this, Bank.class);
+        Intent switchActivityIntent = new Intent(this, homeBank.class);
         startActivity(switchActivityIntent);
     }
 

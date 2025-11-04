@@ -17,7 +17,27 @@
         android:theme="@style/Theme.FreelanceAccounting"
         tools:targetApi="31">
         <activity
-            android:name=".View.Bank"
+            android:name=".View.addBusiness"
+            android:exported="true"
+            android:parentActivityName=".View.homeBusiness"/>
+        <activity
+            android:name=".View.addCharge"
+            android:exported="true"
+            android:parentActivityName=".View.homeCharge"/>
+        <activity
+            android:name=".View.addClient"
+            android:exported="true"
+            android:parentActivityName=".View.homeClient"/>
+        <activity
+            android:name=".View.addCurrency"
+            android:exported="true"
+            android:parentActivityName=".View.homeCurrency"/>
+        <activity
+            android:name=".View.addService"
+            android:exported="true"
+            android:parentActivityName=".View.homeService"/>
+        <activity
+            android:name=".View.homeBank"
             android:exported="true"
             android:parentActivityName=".View.homeMenu"/>
         <activity

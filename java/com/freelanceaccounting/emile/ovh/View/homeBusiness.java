@@ -3,20 +3,25 @@ package com.freelanceaccounting.emile.ovh.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
 
 import com.freelanceaccounting.emile.ovh.R;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class homeBusiness extends AppCompatActivity{
 
+    FloatingActionButton addBusiness;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_business);
+
+        addBusiness = findViewById(R.id.addBusiness);
 
         MaterialToolbar toolbar = findViewById(R.id.toolBar);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -49,6 +54,18 @@ public class homeBusiness extends AppCompatActivity{
             }
         });
 
+        addBusiness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchActivitiesaddBusiness();
+            }
+        });
+
+    }
+
+    public void switchActivitiesaddBusiness(){
+        Intent switchActivityIntent = new Intent(this, addBusiness.class);
+        startActivity(switchActivityIntent);
     }
 
     public void switchActivitiesHome(){
@@ -57,7 +74,7 @@ public class homeBusiness extends AppCompatActivity{
     }
 
     public void switchActivitiesBank(){
-        Intent switchActivityIntent = new Intent(this, Bank.class);
+        Intent switchActivityIntent = new Intent(this, homeBank.class);
         startActivity(switchActivityIntent);
     }
 

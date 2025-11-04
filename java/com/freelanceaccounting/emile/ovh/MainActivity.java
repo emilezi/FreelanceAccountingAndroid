@@ -1,5 +1,7 @@
 package com.freelanceaccounting.emile.ovh;
 
+import com.freelanceaccounting.emile.ovh.Class.Bank;
+import com.freelanceaccounting.emile.ovh.Class.Database;
 import com.freelanceaccounting.emile.ovh.Class.User;
 
 import android.content.Intent;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected Boolean displayData(){
-            User Database = new User(MainActivity.this);
+            Database Database = new Database(MainActivity.this);
             Cursor cursor = Database.readData();
             if(cursor.getCount() == 0){
                 return false;
